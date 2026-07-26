@@ -27,15 +27,17 @@ jobs:  #what are actions job now ??
                
       - name: install dependencies listed in package.json
         run: npm install
-      
-      - name: cdk synth 
-        run: npx cdk synth  #dont we need cdk?? it is in the node_modules now after npm install so we find it 
 
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
           role-session-name: GitHub-Action-Role
           aws-region: us-east-2
+        
+      - name: cdk synth 
+        run: npx cdk synth  #dont we need cdk?? it is in the node_modules now after npm install so we find it 
+
+      
 
       - name: cdk deploy
         run: npx cdk deploy  #dont we need cdk?? it is in the node_modules now after npm install so we find it 
