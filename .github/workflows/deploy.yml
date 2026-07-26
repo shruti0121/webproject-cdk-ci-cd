@@ -44,7 +44,6 @@ jobs:  #what are actions job now ??
       - name: Sts GetCallerIdentity
         run: |
          aws sts get-caller-identity
-        
       - name: cdk synth 
         run: npx cdk synth  #dont we need cdk?? it is in the node_modules now after npm install so we find it 
 
