@@ -37,7 +37,7 @@ export const handler = async (event) => {
         
             Message: {
                 Subject: {
-                    Data: "Your Rice Mill Order Confirmation from CDK"
+                    Data: "Your Rice Mill Order Confirmation from CDK-CI-CD"
                 },
         
                 Body: {

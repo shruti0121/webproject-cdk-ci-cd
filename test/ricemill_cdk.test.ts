@@ -8,7 +8,7 @@ test('SQS Queue and SNS Topic Created', () => {
   const stack = new RicemillCdk.RicemillCdkStack(app, 'MyTestStack');
   // THEN
 
-  const template = Template.fromStack(stack);
+  const template = Template.fromStack(stack);  //cloudfromation stack ?? ? 
 
   template.hasResourceProperties('AWS::SQS::Queue', {
     VisibilityTimeout: 300
