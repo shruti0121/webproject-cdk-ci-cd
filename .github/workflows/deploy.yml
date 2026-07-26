@@ -28,6 +28,14 @@ jobs:  #what are actions job now ??
       - name: install dependencies listed in package.json
         run: npm install
 
+      - name: Debug GitHub context
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Ref: $GITHUB_REF"
+
+      - name: Print role
+        run: echo ${{ secrets.IAMROLE_GITHUB }}
+
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
