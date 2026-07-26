@@ -17,6 +17,7 @@ import * as sns from 'aws-cdk-lib/aws-sns';
 import * as sns_sub from 'aws-cdk-lib/aws-sns-subscriptions';
 import * as sqs from 'aws-cdk-lib/aws-sqs';
 import * as ses from 'aws-cdk-lib/aws-ses';
+import { aws_codeconnections as codeconnections } from 'aws-cdk-lib'
 
 
 export class RicemillCdkStack extends Stack {
@@ -40,7 +41,14 @@ export class RicemillCdkStack extends Stack {
 
      //crate iam role for all the api connected lambdas since they all need access to cloudwatch and dynamodb 
 
-
+    //  const SourceConnection = new codeconnections.CfnConnection(
+    //   this,
+    //   'CICD_Workshop_Connection',
+    //   {
+    //     connectionName: 'CICD_Workshop_Connection',
+    //     providerType: 'GitHub',
+    //   },
+    // )
 
 
 /*   --------------------- IAM Role for backend lambdas except orders ----------------------------- */

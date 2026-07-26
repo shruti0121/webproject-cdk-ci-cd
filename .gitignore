@@ -1,6 +1,6 @@
 lib/**/*.js
 lib/**/*.d.ts
-!jest.config.js
+
 *.d.ts
 node_modules
 
