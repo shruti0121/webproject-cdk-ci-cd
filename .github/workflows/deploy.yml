@@ -32,6 +32,10 @@ jobs:  #what are actions job now ??
         run: |
           echo "Repository: $GITHUB_REPOSITORY"
           echo "Ref: $GITHUB_REF"
+      - name: Debug OIDC claims
+        run: |
+          echo "ACTIONS_ID_TOKEN_REQUEST_URL=$ACTIONS_ID_TOKEN_REQUEST_URL"
+          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN length=${#ACTIONS_ID_TOKEN_REQUEST_TOKEN}"
 
 
       - uses: aws-actions/configure-aws-credentials@v4
