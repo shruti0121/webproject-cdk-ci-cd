@@ -35,7 +35,7 @@ jobs:  #what are actions job now ??
         with:
           role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
           role-session-name: GitHub-Action-Role
-          aws-region: us-east-1
+          aws-region: us-east-2
 
       - name: cdk deploy
         run: npx cdk deploy  #dont we need cdk?? it is in the node_modules now after npm install so we find it 
