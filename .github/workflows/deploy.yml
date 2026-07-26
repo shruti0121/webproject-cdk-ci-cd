@@ -47,8 +47,7 @@ jobs:  #what are actions job now ??
       - name: cdk synth 
         run: npx cdk synth  #dont we need cdk?? it is in the node_modules now after npm install so we find it 
 
-      
-
+    
       - name: cdk deploy
         run: npx cdk deploy  #dont we need cdk?? it is in the node_modules now after npm install so we find it 
 
