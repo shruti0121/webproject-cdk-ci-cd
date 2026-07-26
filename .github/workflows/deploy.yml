@@ -28,7 +28,7 @@ jobs:  #what are actions job now ??
       - name: install dependencies listed in package.json
         run: npm install
 
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
           role-session-name: GitHub-Action-Role
