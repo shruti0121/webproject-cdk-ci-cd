@@ -1,7 +1,7 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
-const sesClient = new SESClient({
-    region: "us-east-2"
+const client = new DynamoDBClient({
+    region:window.APP_CONFIG.region
 });
 
 
