@@ -27,7 +27,6 @@ The application uses:
 Before deploying, install:
 
 - Node.js 22
-- AWS CLI
 - AWS CDK Toolkit
 
 ## Install Node.js
@@ -165,16 +164,6 @@ window.APP_CONFIG = {
 ```
 
 The frontend requires these values to communicate with AWS services.
-
----
-
-# Running Frontend
-
-Upload the frontend files to your S3 bucket:
-
-```bash
-aws s3 sync ricemill-web-app-files s3://YOUR_BUCKET_NAME
-```
 
 ---
 
