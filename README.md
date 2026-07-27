@@ -1,15 +1,94 @@
-# Welcome to your CDK TypeScript project
+```bash
+git clone https://github.com/shruti0121/webproject-cdk-ci-cd.git
+cd webproject-cdk-ci-cd
+```
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`RicemillCdkStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+ Install Prerequisites 
+ Install node.js visit https://nodejs.org/en 
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+ Install the AWS CDK Toolkit. The toolkit is a command-line utility which allows you to work with CDK apps.
+ ```bash
+npm install -g aws-cdk
+```
 
-## Useful commands
+ ```bash
+aws configure
+```
 
-* `npm run build`   type-check the project
-* `npm run watch`   watch for changes and type-check
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+Install project dependencies
+  ```bash
+npm install 
+```
+Bootstrap CDK (first time only per AWS account/region)
+ ```bash
+cdk bootstrap
+```
+ ```bash
+cdk deploy
+```
+Update frontend config in the file ricemill-web-app-files/config.js
+
+
+
+
+
+ 
+ RiceMill AWS Serverless Application
+ 
+A serverless e-commerce application built using AWS CDK.
+
+## Architecture
+
+- S3 + CloudFront - Frontend hosting
+- API Gateway - REST API
+- Lambda - Backend logic
+- DynamoDB - Database
+- Cognito - Authentication
+- SNS/SQS - Event driven order processing
+- CDK - Infrastructure as Code
+- GitHub Actions - CI/CD deployment
+
+- ## Prerequisites
+
+Install:
+- Node.js 22
+- AWS CLI
+- AWS CDK
+
+Configure AWS credentials:
+aws configure
+
+Install dependencies:
+npm install
+
+## Deploy Backend Infrastructure
+
+Run:
+cd ricemill-cdk
+npm install
+cdk bootstrap
+cdk deploy
+
+
+## Configure Frontend
+
+After deployment, update:
+with:
+
+- Cognito User Pool ID
+- Cognito Client ID
+- API Gateway URL
+- AWS Region
+
+
+## CI/CD
+
+Every push to `main` triggers GitHub Actions.
+
+The workflow:
+
+1. Checks out code
+2. Installs Node dependencies
+3. Runs CDK synth
+4. Assumes AWS IAM role using GitHub OIDC
+5. Deploys infrastructure automatically
