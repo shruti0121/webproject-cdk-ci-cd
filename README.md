@@ -8,7 +8,30 @@ Infrastructure as Code (IaC), event-driven architecture, and CI/CD deployment.
 ---
 
 # Architecture
+```mermaid
+flowchart TD
 
+    User[User Browser]
+
+    User --> CloudFront[CloudFront]
+    CloudFront --> S3[S3 Static Website]
+
+    User --> Cognito[Cognito Authentication]
+
+    User --> API[API Gateway]
+
+    API --> Lambda[Lambda Functions]
+
+    Lambda --> DynamoDB[DynamoDB]
+
+    Lambda --> SNS[SNS Topic]
+    SNS --> SQS[SQS Queue]
+    SQS --> EmailLambda[Email Lambda]
+
+    GitHub[GitHub Actions] --> IAM[IAM OIDC Role]
+    IAM --> CDK[AWS CDK Deploy]
+    CDK --> AWS[AWS Infrastructure]
+```
 The application uses:
 
 - **S3 + CloudFront** - Frontend hosting
