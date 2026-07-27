@@ -4,11 +4,10 @@ import { SNSClient, PublishCommand } from "@aws-sdk/client-sns";
 import crypto from "crypto";
 
 const client = new DynamoDBClient({
-    region:window.APP_CONFIG.region
+    region: "us-east-2"
 });
-
 const snsClient = new SNSClient({
-    region: window.APP_CONFIG.region
+    region: "us-east-2"
   });
 
 export const handler = async (event) => {

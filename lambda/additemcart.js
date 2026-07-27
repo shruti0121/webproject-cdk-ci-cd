@@ -9,7 +9,8 @@
 import { DynamoDBClient, GetItemCommand ,UpdateItemCommand} from "@aws-sdk/client-dynamodb";
 
 const client = new DynamoDBClient({
-    region:window.APP_CONFIG.region
+    region: "us-east-2"
+
 });
 
 export const handler = async (event) => {
