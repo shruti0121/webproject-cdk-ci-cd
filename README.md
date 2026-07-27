@@ -8,6 +8,7 @@ Infrastructure as Code (IaC), event-driven architecture, and CI/CD deployment.
 ---
 
 # Architecture
+![Architecture Diagram](ricemill-web-app-files/images/architecture.png)
 ```mermaid
 flowchart TD
 
